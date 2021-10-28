@@ -28,13 +28,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        binding.viewModel=viewModel
         observeViewModel()
         binding.loginButton.setOnClickListener {
-            if (checkData())
+            if (viewModel.checkData())
                 lifecycleScope.launch {
                     viewModel.userIntent.send(
                         LoginIntent.Login(
-                            binding.usernameEt.text.toString(), binding.passwordEt.text.toString()
+                            binding.viewModel!!.userName.value!!, binding.viewModel!!.password.value!!
                         )
                     )
                 }
@@ -74,27 +75,5 @@ class LoginActivity : AppCompatActivity() {
         startActivity(myIntent)
     }
 
-    fun checkData(): Boolean {
-        if (binding.usernameEt.text.toString().isEmpty()) {
-            binding.usernameEt.error = "الاسم مطلوب"
-            return false
-        } else if (!validateUsername(binding.usernameEt.text.toString())) {
-            binding.usernameEt.error = "الاسم غير صحيح"
-            return false
-        } else
-            binding.usernameEt.error = null
 
-        if (binding.passwordEt.text.toString().isEmpty()) {
-            binding.passwordEt.error = "كلمة السر مطلوبة"
-            return false
-        } else if (!validatePassword(binding.passwordEt.text.toString())) {
-            binding.passwordEt.error = "كلمة السر غير صحيحه"
-            return false
-        } else
-            binding.passwordEt.error = null
-
-        return true
-
-
-    }
 }

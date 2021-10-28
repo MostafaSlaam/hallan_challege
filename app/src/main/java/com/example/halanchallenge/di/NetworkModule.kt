@@ -4,7 +4,10 @@ package com.example.halanchallenge.di
 
 import com.example.halanchallenge.BuildConfig
 import com.example.halanchallenge.repository.ApiClient
+import com.example.halanchallenge.repository.AppRepository
+import com.example.halanchallenge.repository.AppRepositoryImpl
 import com.google.gson.Gson
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -113,6 +116,7 @@ object NetworkModule {
             }
         )
     }
+
 
 
 }
