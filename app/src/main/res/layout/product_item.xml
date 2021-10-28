@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintTop_toTopOf="@+id/cardView"
-        tools:text="sadadssdasdasassadasdasdsaddiaishaisoioasdsadpaskpasidposadihisahidhiashihjkdsahjkasdhjksadhkjdsahkdhsakkasjhdjkasdhjksdahjksadhjksdasjdhjksadhjsdhjksadhkjaahsdjkashdjhsadkdsadasddsaassdsadds" />
+        tools:text="sadadssdasdasassadasdasdsaddkkkkkiaishaisoioasdsadpaskpasidposadihisahidhiashihjkdsahjkasdhjksadhkjdsahkdhsakkasjhdjkasdhjksdahjksadhjksdasjdhjksadhjsdhjksadhkjaahsdjkashdjhsadkdsadasddsaassdsadds" />
 
     <Button
         android:id="@+id/more_btn"

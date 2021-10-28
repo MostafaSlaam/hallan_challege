@@ -40,7 +40,7 @@ class LoginViewModel @Inject constructor(val repository: AppRepository) : ViewMo
         viewModelScope.launch {
             userIntent.consumeAsFlow().collect {
                 when (it) {
-                    is LoginIntent.Login -> login(it.username, it.password)
+                    is LoginIntent.Login -> login(it.username.trim(), it.password.toString())
 
                 }
             }
