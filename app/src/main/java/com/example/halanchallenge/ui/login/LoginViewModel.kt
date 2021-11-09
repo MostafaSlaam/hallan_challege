@@ -66,7 +66,7 @@ class LoginViewModel @Inject constructor(val repository: AppRepository) : ViewMo
             userNameError.value = "الاسم مطلوب"
             return false
         } else if (!Validator.validateUsername(userName.value!!) ){
-            userNameError.value= "الاسم غير صحيح"
+            userNameError.value= "الاسم ليس صحيح"
             return false
         } else
             userNameError.value = null
