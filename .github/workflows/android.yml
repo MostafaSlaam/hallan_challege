@@ -1,4 +1,4 @@
-name: Android CI
+name: Android test code
 
 on:
   push:
@@ -6,23 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: set up JDK 17.0.1+12
-      uses: actions/setup-java@v2
-      with:
-        java-version: '17.0.1+12'
-        distribution: 'adopt'
-        cache: gradle*#
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-      
+jobs:      
   unit_tests:
     runs-on: [ubuntu-latest]
     steps:
